@@ -14,6 +14,10 @@ app.use(bodyParser.json());
 
 const port = 5000;
 
+app.get('/', (req, res) =>{
+  res.send("Hellow from db it's working");
+})
+
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, useNewUrlParser: true, keepAlive: 1 });
 client.connect(err => {
   const productsCollection = client.db("emaJohnStore").collection("products");
